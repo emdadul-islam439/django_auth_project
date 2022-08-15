@@ -145,7 +145,7 @@
         ** Why we've not added any code into 'basic_project/urls.py', and the server given expected-output?
 
 
-## sending 'data' into templates files 
+## sending 'data' into templates files [Not immediately needed. Maybe needs in future!]
     -> define a dictionary.
         * context = {
             "variable_1": "This is variable 1",
