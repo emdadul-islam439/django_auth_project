@@ -66,12 +66,12 @@
         * python manage.py startapp basic_app
     -> That's it!
 
-## Create 'urls.py' in the basic_app:
+## Create 'urls.py' in the basic_app: [DONE]
     -> create 'urls.py' 
     -> copy the codes of 'basic_project/urls.py'
     -> paste the codes into the 'basic_app/urls.py'
 
-## Defining "path-variables":
+## Defining "path-variables": [DONE]
     -> first all the request comes to the 'basic_project/urls.py' file 
     -> then it can be directly send the user to a page
         OR, it will send the request to the 'basic_app/urls.py' file 
@@ -95,28 +95,6 @@
         * def index(request):
         *    return HttpResponse("This is HOME PAGE")
 
-## adding "about", "Services", or "Contact" pages
-    -> in the 'basic_app/urls' add different end-points 
-        * urlpatterns = [
-            ..... , 
-            path("about", views.about, name = "about"), 
-            path("services", views.services, name = "services"), 
-            path("contact", views.contact, name = "contact"), 
-         ]
-    -> in the 'basic_app/vies.py' add different functions
-        * ......
-          ......
-          def about(request):
-              return HttpResponse("This is ABOUT page")
-          def services(request):
-              return HttpResponse("This is SERVICES page")
-          def contact(request):
-              return HttpResponse("This is CONTACT page")
-    
-    -> That's it!
-    
-    *** QUESTION:
-        ** Why we've not added any code into 'basic_project/urls.py', and the server given expected-output?
 
 
 ## adding 'static' and 'templates' files:
@@ -144,6 +122,30 @@
     -> inside the 'templates' folder, you will generally add different .html, .js- type files 
         - create a file named 'index.html' and add some code in it. Save it.
         - use "return render(request, "index.html")" instead of "return HttpResponse("This is HOME page")"
+
+
+## adding "about", "Services", or "Contact" pages
+    -> in the 'basic_app/urls' add different end-points 
+        * urlpatterns = [
+            ..... , 
+            path("about", views.about, name = "about"), 
+            path("services", views.services, name = "services"), 
+            path("contact", views.contact, name = "contact"), 
+         ]
+    -> in the 'basic_app/vies.py' add different functions
+        * ......
+          ......
+          def about(request):
+              return HttpResponse("This is ABOUT page")
+          def services(request):
+              return HttpResponse("This is SERVICES page")
+          def contact(request):
+              return HttpResponse("This is CONTACT page")
+    
+    -> That's it!
+    
+    *** QUESTION:
+        ** Why we've not added any code into 'basic_project/urls.py', and the server given expected-output?
 
 
 ## sending 'data' into templates files 
