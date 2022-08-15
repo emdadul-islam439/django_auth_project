@@ -39,7 +39,7 @@
     -> type "django-admin startproject <app-name>
         * "django-admin startproject basic_app"
 
-## Start Django Server: 
+## Start Django Server: [DONE]
     -> if you are in the parent folder go to the 'project' folder  
         - go to 'basic_app' from '01_django_basic_app_cwh'
             * cd basic_app
@@ -51,7 +51,7 @@
             * python manage.py migrate
 
 
-## Rename Project:
+## Rename Project: [NOT NEEDED]
     -> Source: https://stackoverflow.com/a/67640413
     -> replace all the <old-project-name> into <new-project-name>
         - replace the directory (folders) name 
@@ -59,7 +59,7 @@
     -> [TRICK] just find-replace the old-name into new-name, where-ever you find the old-name. That's it!
 
 
-## Create app:
+## Create app: [DONE]
     -> go to the 'project' folder (if already not in the location)
         * cd basic_project
     -> write 'startapp' command
