@@ -66,10 +66,12 @@
         * python manage.py startapp basic_app
     -> That's it!
 
+
 ## Create 'urls.py' in the basic_app: [DONE]
     -> create 'urls.py' 
     -> copy the codes of 'basic_project/urls.py'
     -> paste the codes into the 'basic_app/urls.py'
+
 
 ## Defining "path-variables": [DONE]
     -> first all the request comes to the 'basic_project/urls.py' file 
@@ -97,7 +99,7 @@
 
 
 
-## adding 'static' and 'templates' files:
+## adding 'static' and 'templates' files: [DONE! This step is before the next one's, So we did this before the next]
     -> create two directories exactly inside '01_django_basic_app_cwh/basic_project/basic_project' folder
         - create 'static' and 'templates' directory
         - for 'static' folder-> inside 'basic_projects/settings.py' add this:
@@ -124,23 +126,18 @@
         - use "return render(request, "index.html")" instead of "return HttpResponse("This is HOME page")"
 
 
-## adding "about", "Services", or "Contact" pages
+## adding "home" and "login" pages [DONE]
     -> in the 'basic_app/urls' add different end-points 
         * urlpatterns = [
             ..... , 
-            path("about", views.about, name = "about"), 
-            path("services", views.services, name = "services"), 
-            path("contact", views.contact, name = "contact"), 
+            path("", views.index, name = "home"), 
+            path("login", views.login, name = "login"),
          ]
-    -> in the 'basic_app/vies.py' add different functions
-        * ......
-          ......
-          def about(request):
-              return HttpResponse("This is ABOUT page")
-          def services(request):
-              return HttpResponse("This is SERVICES page")
-          def contact(request):
-              return HttpResponse("This is CONTACT page")
+    -> in the 'basic_app/views.py' add different functions
+        * def index(request):
+              return render(render, "index.html")
+          def login(request):
+              return render(render, "login.html")
     
     -> That's it!
     
