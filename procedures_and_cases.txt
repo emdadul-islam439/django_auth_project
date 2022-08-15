@@ -269,7 +269,7 @@
         * </form>
 
 
-## Create Models:
+## Create Models: [NOT NEEDED]
     -> in the 'basic_app/models.py':
         - create a class 'Contact' and define all the fields 
         - Example: 
@@ -281,7 +281,7 @@
         *     desc = models.TimeField()
         *     date = models.DateField() 
     
-## FOR MIGRATION:
+## FOR MIGRATION: [NOT NEEDED]
     -> REGISTER 'basic_app' and 'Contact'
         - in 'basic_app/admin.py' register the 'Contact' class 
             * admin.site.register(Contact)
@@ -308,7 +308,7 @@
         - see a table named "Contact" is showing up 
 
 
-## Showing our 'string' replacing "Custom Object(..)":
+## Showing our 'string' replacing "Custom Object(..)": [NOT NEEDED]
     -> just return our string into the "__str__" function.
         - Example: 
         * def __str__(self) -> str:
@@ -320,7 +320,7 @@
             -> "Custom Object(1)"
 
 
-## Show 'success' message:
+## Show 'success' message: [NOT NEEDED]
     -> after successfully submit data, show the 'success' message 
         - in the 'basic_app/views.py' import 'django messages'
         * "from django.contrib import messages"
@@ -333,7 +333,7 @@
             *   return .....
 
 
-## Doing things in SHELL:
+## Doing things in SHELL: [NOT NEEDED]
     -> in terminal write:
         * "python manage.py shell"
         - python interpreter will start 
@@ -353,3 +353,37 @@
         - Source: "https://docs.djangoproject.com/en/4.1/topics/db/queries/"
     
     -> type "exit()" if you want to exit from the 
+
+
+## AUTHENTICATE USER:
+    -> Source: "https://docs.djangoproject.com/en/4.1/topics/auth/default/"
+    -> At first import this into 'basic_auth_app/view.py' file   
+        * from django.contrib.auth import authenticate, login, logout
+    -> Login user using 'username' and 'password'
+        - Example:
+        * def loginUser(request):
+        *    if request.method == "POST":
+        *        user_name = request.POST.get('userName')
+        *        password = request.POST.get('password')
+        *        user = authenticate(username=user_name, password=password)
+        *        
+        *        if user is not None:
+        *            login(request, user)
+        *            return redirect("/")
+        *        else:
+        *            return render(request, "login.html")
+        *        
+        *    return render(request, "login.html")
+    
+    -> Logout User:
+        - Example:
+        * def logoutUser(request):
+        *   logout(request)
+        *   return redirect("/login")
+
+    -> Varify user before going to any page:
+        - Example:
+        * def index(request):
+        *   if not request.user.is_authenticated:
+        *       return redirect("/login")
+        *   return render(request, "index.html")
